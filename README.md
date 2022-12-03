@@ -4,17 +4,9 @@
 <a href="https://arxiv.org/pdf/2211.10772.pdf"><img src="https://img.shields.io/badge/arXiv-Paper-<color>"></a>
 </p>
 
-<p align="center">
-  <a href="#Introduction">Introduction</a> |
-  <a href="#Main Results">Main Results</a>
-</p >
-This is the official repo of the paper "DeepSolo: Let Transformer Decoder with Explicit Points Solo for Text Spotting".
-
-## Introduction
+This is the official repo for the paper "DeepSolo: Let Transformer Decoder with Explicit Points Solo for Text Spotting".
 
 <img src="./figs/DeepSolo.jpg" alt="image" style="zoom:50%;" />
-
-**Abstract.** End-to-end text spotting aims to integrate scene text detection and recognition into a unified framework. Dealing with the relationship between the two sub-tasks plays a pivotal role in designing effective spotters. Although transformer-based methods eliminate the heuristic post-processing, they still suffer from the synergy issue between the sub-tasks and low training efficiency. In this paper, we present DeepSolo, a simple detection transformer baseline that lets a single Decoder with Explicit Points Solo for text detection and recognition simultaneously. Technically, for each text instance, we represent the character sequence as ordered points and model them with learnable explicit point queries. After passing a single decoder, the point queries have encoded requisite text semantics and locations and thus can be further decoded to the center line, boundary, script, and confidence of text via very simple prediction heads in parallel, solving the sub-tasks in text spotting in a unified framework. Besides, we also introduce a text-matching criterion to deliver more accurate supervisory signals, thus enabling more efficient training. Quantitative experiments on public benchmarks demonstrate that DeepSolo outperforms previous state-of-the-art methods and achieves better training efficiency. In addition, DeepSolo is also compatible with line annotations, which require much less annotation cost than polygons.
 
 ## Main Results
 
