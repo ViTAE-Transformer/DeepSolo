@@ -1,0 +1,22 @@
+_BASE_: "../Base_det.yaml"
+
+MODEL:
+  WEIGHTS: "output/SwinT/150k_tt_mlt_13_15/pretrain/model_final.pth"
+
+DATASETS:
+  TRAIN: ("totaltext_train",)
+  TEST: ("totaltext_test",)
+
+SOLVER:
+  IMS_PER_BATCH: 8
+  BASE_LR: 1e-5
+  LR_BACKBONE: 1e-5
+  WARMUP_ITERS: 0
+  STEPS: (100000,)  # no step
+  MAX_ITER: 10000
+  CHECKPOINT_PERIOD: 2000
+
+TEST:
+  EVAL_PERIOD: 1000
+
+OUTPUT_DIR: "output/SwinT/150k_tt_mlt_13_15/finetune/totaltext"

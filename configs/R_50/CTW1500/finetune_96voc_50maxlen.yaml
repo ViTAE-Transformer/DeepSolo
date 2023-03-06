@@ -1,0 +1,38 @@
+_BASE_: "../Base_det.yaml"
+
+MODEL:
+  WEIGHTS: "output/R50/ctw1500/pretrain_150k-tt-mlt-ic13-15_maxlen50_96voc/model_final.pth"
+  TRANSFORMER:
+    VOC_SIZE: 96
+    NUM_POINTS: 50
+    LOSS:
+        BEZIER_SAMPLE_POINTS: 50
+        BEZIER_CLASS_WEIGHT: 1.0
+        BEZIER_COORD_WEIGHT: 0.5
+        POINT_CLASS_WEIGHT: 1.0
+        POINT_COORD_WEIGHT: 0.5
+        POINT_TEXT_WEIGHT: 1.0 #0.5
+        BOUNDARY_WEIGHT: 0.25
+  
+DATASETS:
+  TRAIN: ("ctw1500_train_96voc",)
+  TEST: ("ctw1500_test",)
+
+INPUT:
+  ROTATE: False
+  MIN_SIZE_TEST: 1000
+  MAX_SIZE_TEST: 1200
+
+SOLVER:
+  IMS_PER_BATCH: 8
+  BASE_LR: 5e-5
+  LR_BACKBONE: 5e-6
+  WARMUP_ITERS: 0
+  STEPS: (8000,)
+  MAX_ITER: 12000
+  CHECKPOINT_PERIOD: 4000
+
+TEST:
+  EVAL_PERIOD: 1000
+
+OUTPUT_DIR: "output/R50/ctw1500/finetune_maxlen50_96voc"

@@ -1,0 +1,37 @@
+_BASE_: "../Base_det.yaml"
+
+MODEL:
+  WEIGHTS: "detectron2://ImageNetPretrained/torchvision/R-50.pkl"
+  TRANSFORMER:
+    VOC_SIZE: 96
+    NUM_POINTS: 50
+    LOSS:
+        BEZIER_SAMPLE_POINTS: 50  # the same as NUM_POINTS
+        BEZIER_CLASS_WEIGHT: 1.0
+        BEZIER_COORD_WEIGHT: 0.5
+        POINT_CLASS_WEIGHT: 1.0
+        POINT_COORD_WEIGHT: 0.5
+        POINT_TEXT_WEIGHT: 0.5
+        BOUNDARY_WEIGHT: 0.25
+  
+DATASETS:
+  TRAIN: ("syntext1_96voc", "syntext2_96voc", "totaltext_train_96voc", "mlt_96voc", "ic15_train_96voc", "ic13_train_96voc",)
+  TEST: ("ctw1500_test",)
+
+INPUT:
+  MIN_SIZE_TEST: 1000
+  MAX_SIZE_TEST: 1200
+
+SOLVER:
+  IMS_PER_BATCH: 8
+  BASE_LR: 1e-4
+  LR_BACKBONE: 1e-5
+  WARMUP_ITERS: 0
+  STEPS: (320000,)
+  MAX_ITER: 375000
+  CHECKPOINT_PERIOD: 100000
+
+TEST:
+  EVAL_PERIOD: 10000
+
+OUTPUT_DIR: "output/R50/ctw1500/pretrain_150k-tt-mlt-ic13-15_maxlen50_96voc"

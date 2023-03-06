@@ -1,0 +1,22 @@
+_BASE_: "../Base_det.yaml"
+
+MODEL:
+  WEIGHTS: "detectron2://ImageNetPretrained/torchvision/R-50.pkl"
+  
+DATASETS:
+  TRAIN: ("syntext1","syntext2","totaltext_train",)
+  TEST: ("totaltext_test",)
+
+SOLVER:
+  IMS_PER_BATCH: 8
+  BASE_LR: 1e-4
+  LR_BACKBONE: 1e-5
+  WARMUP_ITERS: 0
+  STEPS: (300000,)
+  MAX_ITER: 350000
+  CHECKPOINT_PERIOD: 100000
+
+TEST:
+  EVAL_PERIOD: 10000
+
+OUTPUT_DIR: "output/R50/150k_tt/pretrain"
