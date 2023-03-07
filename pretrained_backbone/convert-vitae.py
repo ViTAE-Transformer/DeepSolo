@@ -4,7 +4,7 @@ import torch
 
 """
 Usage:
-  # download SwinTransformer (tiny or small version) from:
+  # download ViTAE from:
   https://github.com/ViTAE-Transformer/ViTAE-Transformer/tree/main/Image-Classification
 
   # run the conversion, for example:
