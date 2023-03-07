@@ -190,7 +190,6 @@ class DETECTION_TRANSFORMER(nn.Module):
 
         # (n_proposal x n_pts, d_model) -> (n_proposal, n_pts, d_model)
         point_embed = self.point_embed.weight.reshape((self.num_proposals, self.num_points, self.d_model)) # not shared
-        # point_embed = self.point_embed.weight[None, ...].repeat(self.num_proposals, 1, 1)  # shared
 
         (
             hs,
