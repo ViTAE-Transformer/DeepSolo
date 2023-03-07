@@ -14,6 +14,7 @@
 This is the official repo for the paper:
 
 > [**DeepSolo: Let Transformer Decoder with Explicit Points Solo for Text Spotting**](https://arxiv.org/pdf/2211.10772v3.pdf)
+> 
 > Maoyuan Ye,  Jing Zhang, Shanshan Zhao, Juhua Liu, Tongliang Liu, Bo Du, Dacheng Tao
 
 <img src="./figs/DeepSolo.jpg" alt="image" style="zoom:50%;" />
@@ -24,6 +25,7 @@ This is the official repo for the paper:
 
 Relevant Project: 
 > [**DPText-DETR: Towards Better Scene Text Detection with Dynamic Points in Transformer** ](https://arxiv.org/abs/2207.04491) | [Code](https://github.com/ymy-k/DPText-DETR)
+> 
 > Maoyuan Ye, Jing Zhang, Shanshan Zhao, Juhua Liu, Bo Du, Dacheng Tao
 
 Other applications of [ViTAE](https://github.com/ViTAE-Transformer/ViTAE-Transformer) inlcude: [ViTPose](https://github.com/ViTAE-Transformer/ViTPose) | [Remote Sensing](https://github.com/ViTAE-Transformer/ViTAE-Transformer-Remote-Sensing) | [Matting](https://github.com/ViTAE-Transformer/ViTAE-Transformer-Matting) | [VSA](https://github.com/ViTAE-Transformer/ViTAE-VSA) | [Video Object Segmentation](https://github.com/ViTAE-Transformer/VOS-LLB)
@@ -207,7 +209,7 @@ python tools/train_net.py --config-file configs/R_50/IC15/finetune_150k_tt_mlt_1
 python tools/train_net.py --config-file configs/R_50/CTW1500/pretrain_96voc_50maxlen.yaml --num-gpus 4
 ```
 
-**2. Fine-tune:**
+**2. Fine-tune**
 
 ```
 python tools/train_net.py --config-file configs/R_50/CTW1500/finetune_96voc_50maxlen.yaml --num-gpus 4
