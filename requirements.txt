@@ -1,3 +1,4 @@
+setuptools==59.5.0
 editdistance==0.6.2
 matplotlib==3.3.3
 numba==0.51.2
