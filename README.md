@@ -244,4 +244,4 @@ If you find DeepSolo helpful, please consider giving this repo a star:star: and 
 
 ## Acknowledgement
 
-This project is based on [Adelaidet](https://github.com/aim-uofa/AdelaiDet).
+This project is based on [Adelaidet](https://github.com/aim-uofa/AdelaiDet). For academic use, this project is licensed under the 2-clause BSD License.
