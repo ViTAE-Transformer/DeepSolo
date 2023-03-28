@@ -1,7 +1,7 @@
 <h1 align="center">DeepSolo: Let Transformer Decoder with Explicit Points Solo for Text Spotting</h1> 
 
 <p align="center">
-<a href="https://arxiv.org/pdf/2211.10772v3.pdf"><img src="https://img.shields.io/badge/arXiv-Paper-<color>"></a>
+<a href="https://arxiv.org/pdf/2211.10772v4.pdf"><img src="https://img.shields.io/badge/arXiv-Paper-<color>"></a>
 </p>
 
 <p align="center">
@@ -123,7 +123,7 @@ python setup.py build develop
 *Some files need to be renamed.* Organize them as follows (lexicon files are not listed here):
 
 ```
-|- datasets
+|- ./datasets
    |- syntext1
    |  |- train_images
    |  └  annotations
