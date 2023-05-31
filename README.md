@@ -21,7 +21,9 @@ This is the official repo for the paper:
 
 ## News
 
-`2023.02.28` DeepSolo is accepted by CVPR 2023 :tada::tada:
+`2023.05.31` The extension paper (DeepSolo++) is submitted to ArXiv. The code and models will be released soon.
+
+`2023.02.28` DeepSolo is accepted by CVPR 2023. :tada::tada:
 
 Relevant Project: 
 > [**DPText-DETR: Towards Better Scene Text Detection with Dynamic Points in Transformer** ](https://arxiv.org/abs/2207.04491) | [Code](https://github.com/ymy-k/DPText-DETR)
@@ -237,10 +239,6 @@ If you find DeepSolo helpful, please consider giving this repo a star:star: and 
   year={2023}
 }
 ```
-
-## Forthcoming
-
-- [ ] DeepSolo v2
 
 ## Acknowledgement
 
