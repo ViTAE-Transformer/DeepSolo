@@ -88,7 +88,7 @@ Other applications of [ViTAE](https://github.com/ViTAE-Transformer/ViTAE-Transfo
 |:------:|:------:|:------:|
 |Res-50|Synth150K+Total-Text+MLT17+IC13+IC15|[OneDrive](https://1drv.ms/u/s!AimBgYV7JjTlgcdtYzwEBGvOH6CiBw?e=trgKFE)|
 
-***Chinese Pre-trained Model for ReCTS***
+*** Pre-trained Model for ReCTS***
 
 |Backbone|Training Data|Weights|
 |:------:|:------:|:------:|
@@ -179,6 +179,22 @@ python setup.py build develop
    |- inversetext
    |  |- test_images
    |  └  test.json
+   |- chnsyntext
+   |  |- syn_130k_images
+   |  └  chn_syntext.json
+   |- ArT
+   |  |- rename_artimg_train
+   |  └  art_train.json
+   |- LSVT
+   |  |- rename_lsvtimg_train
+   |  └  lsvt_train.json
+   |- ReCTS
+   |  |- ReCTS_train_images
+   |  |- ReCTS_val_images
+   |  |- ReCTS_test_images
+   |  |- rects_train.json
+   |  |- rects_val.json
+   |  └  rects_test.json
    |- evaluation
    |  |- gt_*.zip
 ```
@@ -186,8 +202,10 @@ python setup.py build develop
 
 <details>
 <summary>ImageNet Pre-trained Backbone</summary>
+
 If you want to pre-train DeepSolo with ResNet-101, ViTAEv2-S or SwinTransformer , you can download the converted backbone weights and put them under `pretrained_backbone` for initialization:  [Swin-T](https://1drv.ms/u/s!ApEsJ9RIZdBQgQvFeSphQrQyacmS?e=H7NtDN) | [ViTAEv2-S](https://1drv.ms/u/s!ApEsJ9RIZdBQgQqGMOhxm6SNmXu3?e=8hiqX1) | [Res101](https://1drv.ms/u/s!ApEsJ9RIZdBQgQ3594GtopQMe-lR?e=fPnWeb) | [Swin-S](https://1drv.ms/u/s!ApEsJ9RIZdBQgQzn8w4kPoPvzOtY?e=Hfa4ET). You can also refer to the python files in `pretrained_backbone` and convert the backbones by yourself.
 </details>
+
 
 If you want to use the model trained on Chinese data, please download the font (`simsun.ttc`) and Chinese character list (`chn_cls_list`, a binary file) first.
 ```
