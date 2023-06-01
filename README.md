@@ -1,21 +1,17 @@
 <h1 align="center">DeepSolo: Let Transformer Decoder with Explicit Points Solo for Text Spotting</h1> 
 
 <p align="center">
-<a href="https://arxiv.org/pdf/2211.10772v4.pdf"><img src="https://img.shields.io/badge/arXiv-Paper-<color>"></a>
-</p>
-
-<p align="center">
   <a href="#News">News</a> |
   <a href="#Main Results">Main Results</a> |
   <a href="#Usage">Usage</a> |
   <a href="#Citation">Citation</a> |
   <a href="#Acknowledgement">Acknowledgement</a>
 </p >
-This is the official repo for the paper:
+This is the official repo for the papers:
 
-> [**DeepSolo: Let Transformer Decoder with Explicit Points Solo for Text Spotting**](https://arxiv.org/pdf/2211.10772v3.pdf)
+> [**DeepSolo: Let Transformer Decoder with Explicit Points Solo for Text Spotting**](https://arxiv.org/abs/2211.10772)
 > 
-> Maoyuan Ye,  Jing Zhang, Shanshan Zhao, Juhua Liu, Tongliang Liu, Bo Du, Dacheng Tao
+> [**DeepSolo++: Let Transformer Decoder with Explicit Points Solo for Text Spotting**](https://arxiv.org/abs/2305.19957)
 
 <img src="./figs/DeepSolo.jpg" alt="image" style="zoom:50%;" />
 
@@ -27,8 +23,6 @@ This is the official repo for the paper:
 
 Relevant Project: 
 > [**DPText-DETR: Towards Better Scene Text Detection with Dynamic Points in Transformer** ](https://arxiv.org/abs/2207.04491) | [Code](https://github.com/ymy-k/DPText-DETR)
-> 
-> Maoyuan Ye, Jing Zhang, Shanshan Zhao, Juhua Liu, Bo Du, Dacheng Tao
 
 Other applications of [ViTAE](https://github.com/ViTAE-Transformer/ViTAE-Transformer) inlcude: [ViTPose](https://github.com/ViTAE-Transformer/ViTPose) | [Remote Sensing](https://github.com/ViTAE-Transformer/ViTAE-Transformer-Remote-Sensing) | [Matting](https://github.com/ViTAE-Transformer/ViTAE-Transformer-Matting) | [VSA](https://github.com/ViTAE-Transformer/ViTAE-VSA) | [Video Object Segmentation](https://github.com/ViTAE-Transformer/VOS-LLB)
 
@@ -284,7 +278,7 @@ python demo/demo.py --config-file ${CONFIG_FILE} --input ${IMAGES_FOLDER_OR_ONE_
 
 If you find DeepSolo helpful, please consider giving this repo a star:star: and citing:
 ```bibtex
-@inproceedings{ye2022deepsolo,
+@inproceedings{ye2023deepsolo,
   title={DeepSolo: Let Transformer Decoder with Explicit Points Solo for Text Spotting},
   author={Ye, Maoyuan and Zhang, Jing and Zhao, Shanshan and Liu, Juhua and Liu, Tongliang and Du, Bo and Tao, Dacheng},
   booktitle={CVPR},
