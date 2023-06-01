@@ -62,6 +62,11 @@ Other applications of [ViTAE](https://github.com/ViTAE-Transformer/ViTAE-Transfo
 |:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
 |Res-50|Synth150K+Total-Text+MLT17+IC13+IC15|93.2|85.0|88.9|64.2|81.4|[OneDrive](https://1drv.ms/u/s!AimBgYV7JjTlgcdsiFgSz-FHgKepqQ?e=56gdHj)|
 
+**ICDAR 2019 ReCTS**
+|Backbone|External Data|Det-P|Det-R|Det-H|1-NED|Weights|
+|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
+|Res-50|SynChinese130K+ArT+LSVT|92.6|89.0|90.7|78.3|OneDrive|
+
 ***
 
 ***Pre-trained Models for Total-Text & ICDAR 2015***
@@ -77,11 +82,17 @@ Other applications of [ViTAE](https://github.com/ViTAE-Transformer/ViTAE-Transfo
 |ViTAEv2-S|Synth150K+Total-Text+MLT17+IC13+IC15|[OneDrive](https://1drv.ms/u/s!AimBgYV7JjTlgcd7KPBhro8LU9fLjA?e=gcpVZ2)|
 |ViTAEv2-S|Synth150K+Total-Text+MLT17+IC13+IC15+TextOCR|[OneDrive](https://1drv.ms/u/s!AimBgYV7JjTlgcd9wi432uitMgTM-w?e=fjuJbm)|
 
-***Pre-trained Models for CTW1500***
+***Pre-trained Model for CTW1500***
 
 |Backbone|Training Data|Weights|
 |:------:|:------:|:------:|
 |Res-50|Synth150K+Total-Text+MLT17+IC13+IC15|[OneDrive](https://1drv.ms/u/s!AimBgYV7JjTlgcdtYzwEBGvOH6CiBw?e=trgKFE)|
+
+***Chinese Pre-trained Model for ReCTS***
+
+|Backbone|Training Data|Weights|
+|:------:|:------:|:------:|
+|Res-50|SynChinese130K+ArT+LSVT+ReCTS|OneDrive|
 
 ## Usage
 
@@ -175,10 +186,14 @@ python setup.py build develop
 
 <details>
 <summary>ImageNet Pre-trained Backbone</summary>
-
 If you want to pre-train DeepSolo with ResNet-101, ViTAEv2-S or SwinTransformer , you can download the converted backbone weights and put them under `pretrained_backbone` for initialization:  [Swin-T](https://1drv.ms/u/s!ApEsJ9RIZdBQgQvFeSphQrQyacmS?e=H7NtDN) | [ViTAEv2-S](https://1drv.ms/u/s!ApEsJ9RIZdBQgQqGMOhxm6SNmXu3?e=8hiqX1) | [Res101](https://1drv.ms/u/s!ApEsJ9RIZdBQgQ3594GtopQMe-lR?e=fPnWeb) | [Swin-S](https://1drv.ms/u/s!ApEsJ9RIZdBQgQzn8w4kPoPvzOtY?e=Hfa4ET). You can also refer to the python files in `pretrained_backbone` and convert the backbones by yourself.
 </details>
 
+If you want to use the model trained on Chinese data, please download the font (`simsun.ttc`) and Chinese character list (`chn_cls_list`, a binary file) first.
+```
+wget https://drive.google.com/file/d/1dcR__ZgV_JOfpp8Vde4FR3bSR-QnrHVo/view?usp=sharing -O simsun.ttc
+wget https://drive.google.com/file/d/1wqkX2VAy48yte19q1Yn5IVjdMVpLzYVo/view?usp=sharing -O chn_cls_list
+```
 
 - ### Training
 <details>
@@ -218,10 +233,29 @@ python tools/train_net.py --config-file configs/R_50/CTW1500/finetune_96voc_50ma
 ```
 </details>
 
+<details>
+<summary>ReCTS</summary>
+
+**1. Pre-train**
+
+```
+python tools/train_net.py --config-file configs/R_50/ReCTS/pretrain.yaml --num-gpus 8
+```
+
+**2. Fine-tune**
+
+```
+python tools/train_net.py --config-file configs/R_50/ReCTS/finetune.yaml --num-gpus 8
+```
+</details>
+
+
 - ### Evaluation
 ```
 python tools/train_net.py --config-file ${CONFIG_FILE} --eval-only MODEL.WEIGHTS ${MODEL_PATH}
 ```
+**Note:** To conduct evaluation on ICDAR 2019 ReCTS, you can directly submit the saved file `output/R50/rects/finetune/inference/rects_submit.txt` to the [official website](https://rrc.cvc.uab.es/?ch=12&com=mymethods&task=4) for evaluation.
+
 
 - ### Visualization Demo
 ```

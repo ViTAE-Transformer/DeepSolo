@@ -35,11 +35,19 @@ _PREDEFINED_SPLITS_TEXT = {
     "ic15_train_96voc": ("ic15/train_images", "ic15/train_96voc.json"),
     "ctw1500_train_96voc": ("ctw1500/train_images", "ctw1500/train_96voc.json"),
 
+    # Chinese
+    "chnsyn_train": ("chnsyntext/syn_130k_images", "chnsyntext/chn_syntext.json"),
+    "rects_train": ("ReCTS/ReCTS_train_images", "ReCTS/rects_train.json"),
+    "rects_val": ("ReCTS/ReCTS_val_images", "ReCTS/rects_val.json"),
+    "lsvt_train": ("LSVT/rename_lsvtimg_train", "LSVT/lsvt_train.json"),
+    "art_train": ("ArT/rename_artimg_train", "ArT/art_train.json"),
+
     # evaluation, just for reading images, annotations may be empty
     "totaltext_test": ("totaltext/test_images", "totaltext/test.json"),
     "ic15_test": ("ic15/test_images", "ic15/test.json"),
     "ctw1500_test": ("ctw1500/test_images", "ctw1500/test.json"),
     "inversetext_test": ("inversetext/test_images", "inversetext/test.json"),
+    "rects_test": ("ReCTS/ReCTS_test_images", "ReCTS/rects_test.json"),
 }
 
 metadata_text = {

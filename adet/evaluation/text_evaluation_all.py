@@ -47,6 +47,7 @@ class TextEvaluator():
             )
 
         self.voc_size = cfg.MODEL.TRANSFORMER.VOC_SIZE
+        self.use_customer_dict = cfg.MODEL.TRANSFORMER.CUSTOM_DICT
         if self.voc_size == 37:
             self.CTLABELS = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
                              't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
@@ -57,14 +58,18 @@ class TextEvaluator():
                              'W','X','Y','Z','[','\\',']','^','_','`','a','b','c','d','e','f','g','h','i','j','k','l',
                              'm','n','o','p','q','r','s','t','u','v','w','x','y','z','{','|','}','~']
         else:
-            raise NotImplementedError
+            with open(self.use_customer_dict, 'rb') as fp:
+                self.CTLABELS = pickle.load(fp)
+
         # voc_size includes the unknown class, which is not in self.CTABLES
         assert(int(self.voc_size - 1) == len(self.CTLABELS)), "voc_size is not matched dictionary size, got {} and {}.".format(int(self.voc_size - 1), len(self.CTLABELS))
 
         json_file = PathManager.get_local_path(self._metadata.json_file)
         with contextlib.redirect_stdout(io.StringIO()):
-            self._coco_api = COCO(json_file)    
+            self._coco_api = COCO(json_file)
+
         self.dataset_name = dataset_name
+        self.submit = False
         # use dataset_name to decide eval_gt_path
         self.lexicon_type = cfg.TEST.LEXICON_TYPE
         if "totaltext" in dataset_name:
@@ -83,6 +88,12 @@ class TextEvaluator():
             self._text_eval_gt_path = "datasets/evaluation/gt_inversetext.zip"
             self._word_spotting = False
             self.dataset_name = "inversetext"
+        elif "rects" in dataset_name:
+            self.submit = True
+            self._text_eval_gt_path = ""
+            self.dataset_name = "rects"
+        else:
+            raise NotImplementedError
 
     def reset(self):
         self._predictions = []
@@ -377,17 +388,40 @@ class TextEvaluator():
             self._logger.warning("[COCOEvaluator] Did not receive valid predictions.")
             return {}
 
-        coco_results = list(itertools.chain(*[x["instances"] for x in predictions]))
         PathManager.mkdirs(self._output_dir)
-        file_path = os.path.join(self._output_dir, "text_results.json")
-        self._logger.info("Saving results to {}".format(file_path))
-        with PathManager.open(file_path, "w") as f:
-            f.write(json.dumps(coco_results))
-            f.flush()
+        if self.submit:
+            file_path = os.path.join(self._output_dir, self.dataset_name+"_submit.txt")
+            self._logger.info("Saving results to {}".format(file_path))
+            with PathManager.open(file_path, "w") as f:
+                for prediction in predictions:
+                    write_id = "{:06d}".format(prediction["image_id"]+1)
+                    write_img_name = "test_"+write_id+'.jpg\n'
+                    f.write(write_img_name)
+                    if len(prediction["instances"]) > 0:
+                        for inst in prediction["instances"]:
+                            write_poly, write_text = inst["polys"], inst["rec"]
+                            if write_text == '':
+                                continue
+                            if not LinearRing(write_poly).is_ccw:
+                                write_poly.reverse()
+                            write_poly = np.array(write_poly).reshape(-1).tolist()
+                            write_poly = ','.join(list(map(str,write_poly)))
+                            f.write(write_poly+','+write_text+'\n')
+                f.flush()
+            self._logger.info("Ready to submit results from {}".format(file_path))
+        else:
+            coco_results = list(itertools.chain(*[x["instances"] for x in predictions]))
+            file_path = os.path.join(self._output_dir, "text_results.json")
+            self._logger.info("Saving results to {}".format(file_path))
+            with PathManager.open(file_path, "w") as f:
+                f.write(json.dumps(coco_results))
+                f.flush()
+
         self._results = OrderedDict()
         # eval text
         if not self._text_eval_gt_path:
             return copy.deepcopy(self._results)
+
         temp_dir = "temp_det_results/"
         self.to_eval_format(file_path, temp_dir)
         result_path, result_path_full = self.sort_detection(temp_dir)
@@ -428,7 +462,7 @@ class TextEvaluator():
         results = []
         for pnt, rec, score in zip(pnts, recs, scores):
             poly = self.pnt_to_polygon(pnt)
-            if 'ic15' in inputs['file_name']:
+            if 'ic15' in self.dataset_name or 'rects' in self.dataset_name:
                 poly = polygon2rbox(poly, height, width)
             s = self.ctc_decode(rec)
             result = {
@@ -447,33 +481,20 @@ class TextEvaluator():
         return ctrl_pnt.tolist()
 
     def ctc_decode(self, rec):
-        if self.voc_size == 37:
-            last_char = '-'  # choose what is not in self.CTABLE as the last_char
-            s = ''
-            for c in rec:
-                c = int(c)
-                if c < self.voc_size - 1:
-                    if last_char != c:
+        last_char = '###'
+        s = ''
+        for c in rec:
+            c = int(c)
+            if c < self.voc_size - 1:
+                if last_char != c:
+                    if self.voc_size == 37 or self.voc_size == 96:
                         s += self.CTLABELS[c]
                         last_char = c
-                else:
-                    last_char = '-'
-            s = s.replace('-', '')
-
-        elif self.voc_size == 96:
-            last_char = '###'  # choose what is not in self.CTABLE as the last_char
-            s = ''
-            for c in rec:
-                c = int(c)
-                if c < self.voc_size - 1:
-                    if last_char != c:
-                        s += self.CTLABELS[c]
+                    else:
+                        s += str(chr(self.CTLABELS[c]))
                         last_char = c
-                else:
-                    last_char = '###'
-
-        else:
-            raise NotImplementedError
+            else:
+                last_char = '###'
 
         return s
             

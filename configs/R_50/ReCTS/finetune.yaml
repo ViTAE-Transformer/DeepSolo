@@ -1,0 +1,29 @@
+_BASE_: "../Base_det.yaml"
+
+MODEL:
+  WEIGHTS: "./output/R50/rects/pretrain/model_final.pth"
+  TRANSFORMER:
+    VOC_SIZE: 5462
+    CUSTOM_DICT: "chn_cls_list"
+    INFERENCE_TH_TEST: 0.35
+    LOSS:
+      POINT_TEXT_WEIGHT: 1.0
+  
+DATASETS:
+  TRAIN: ("rects_train", "rects_val",)
+  TEST: ("rects_test",)
+INPUT:
+  ROTATE: False
+SOLVER:
+  IMS_PER_BATCH: 8
+  BASE_LR: 1e-5
+  LR_BACKBONE: 1e-6
+  WARMUP_ITERS: 0
+  STEPS: (20000,)
+  MAX_ITER: 30000
+  CHECKPOINT_PERIOD: 30000
+
+TEST:
+  EVAL_PERIOD: 100000000
+
+OUTPUT_DIR: "output/R50/rects/finetune"
