@@ -69,7 +69,7 @@ Other applications of [ViTAE](https://github.com/ViTAE-Transformer/ViTAE-Transfo
 
 ***
 
-***Pre-trained Models for Total-Text & ICDAR 2015***
+**Pre-trained Models for Total-Text & ICDAR 2015**
 
 |Backbone|Training Data|Weights|
 |:------:|:------:|:------:|
@@ -82,13 +82,13 @@ Other applications of [ViTAE](https://github.com/ViTAE-Transformer/ViTAE-Transfo
 |ViTAEv2-S|Synth150K+Total-Text+MLT17+IC13+IC15|[OneDrive](https://1drv.ms/u/s!AimBgYV7JjTlgcd7KPBhro8LU9fLjA?e=gcpVZ2)|
 |ViTAEv2-S|Synth150K+Total-Text+MLT17+IC13+IC15+TextOCR|[OneDrive](https://1drv.ms/u/s!AimBgYV7JjTlgcd9wi432uitMgTM-w?e=fjuJbm)|
 
-***Pre-trained Model for CTW1500***
+**Pre-trained Model for CTW1500**
 
 |Backbone|Training Data|Weights|
 |:------:|:------:|:------:|
 |Res-50|Synth150K+Total-Text+MLT17+IC13+IC15|[OneDrive](https://1drv.ms/u/s!AimBgYV7JjTlgcdtYzwEBGvOH6CiBw?e=trgKFE)|
 
-*** Pre-trained Model for ReCTS***
+**Pre-trained Model for ReCTS**
 
 |Backbone|Training Data|Weights|
 |:------:|:------:|:------:|
@@ -288,6 +288,13 @@ If you find DeepSolo helpful, please consider giving this repo a star:star: and 
   title={DeepSolo: Let Transformer Decoder with Explicit Points Solo for Text Spotting},
   author={Ye, Maoyuan and Zhang, Jing and Zhao, Shanshan and Liu, Juhua and Liu, Tongliang and Du, Bo and Tao, Dacheng},
   booktitle={CVPR},
+  year={2023}
+}
+
+@article{ye2023deepsolo++,
+  title={DeepSolo++: Let Transformer Decoder with Explicit Points Solo for Text Spotting},
+  author={Ye, Maoyuan and Zhang, Jing and Zhao, Shanshan and Liu, Juhua and Liu, Tongliang and Du, Bo and Tao, Dacheng},
+  booktitle={arxiv preprint arXiv:2305.19957},
   year={2023}
 }
 ```
