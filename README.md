@@ -17,6 +17,8 @@ This is the official repo for the papers:
 
 ## News
 
+`2023.06.2` Update the pre-trained and fine-tuned Chinese scene text spotting model (78.3% 1-NED on ICDAR 2019 ReCTS). 
+
 `2023.05.31` The extension paper (DeepSolo++) is submitted to ArXiv. The code and models will be released soon.
 
 `2023.02.28` DeepSolo is accepted by CVPR 2023. :tada::tada:
@@ -59,7 +61,7 @@ Other applications of [ViTAE](https://github.com/ViTAE-Transformer/ViTAE-Transfo
 **ICDAR 2019 ReCTS**
 |Backbone|External Data|Det-P|Det-R|Det-H|1-NED|Weights|
 |:------:|:------:|:------:|:------:|:------:|:------:|:------:|
-|Res-50|SynChinese130K+ArT+LSVT|92.6|89.0|90.7|78.3|OneDrive|
+|Res-50|SynChinese130K+ArT+LSVT|92.6|89.0|90.7|78.3|[OneDrive](https://1drv.ms/u/s!AimBgYV7JjTlgch2WG67htEhTddRnw?e=UpnEaq)|
 
 ***
 
@@ -86,7 +88,7 @@ Other applications of [ViTAE](https://github.com/ViTAE-Transformer/ViTAE-Transfo
 
 |Backbone|Training Data|Weights|
 |:------:|:------:|:------:|
-|Res-50|SynChinese130K+ArT+LSVT+ReCTS|OneDrive|
+|Res-50|SynChinese130K+ArT+LSVT+ReCTS|[OneDrive](https://1drv.ms/u/s!AimBgYV7JjTlgch1pH08bolhgKEBQQ?e=yeSwwQ)|
 
 ## Usage
 
@@ -125,9 +127,17 @@ python setup.py build develop
 
 `[Inverse-Text]` [images](https://1drv.ms/u/s!AimBgYV7JjTlgccVhlbD4I3z5QfmsQ?e=myu7Ue) | [annotations](https://1drv.ms/u/s!ApEsJ9RIZdBQf3G4vZpf4QD5NKo?e=xR3GtY)
 
+`[SynChinese130K]` [images](https://github.com/aim-uofa/AdelaiDet/tree/master/datasets) | [annotations](https://1drv.ms/u/s!AimBgYV7JjTlgch5W0n1Iv397i0csw?e=Gq8qww)
+
+`[ArT]` [images](https://github.com/aim-uofa/AdelaiDet/tree/master/datasets) | [annotations](https://1drv.ms/u/s!AimBgYV7JjTlgch45d0VHNCoPC1jfQ?e=likK00)
+
+`[LSVT]` [images](https://github.com/aim-uofa/AdelaiDet/tree/master/datasets) | [annotations](https://1drv.ms/u/s!AimBgYV7JjTlgch7yjmrCSN0TgoO4w?e=NKd5OG)
+
+`[ReCTS]` [images](https://github.com/aim-uofa/AdelaiDet/tree/master/datasets) | [annotations](https://1drv.ms/u/s!AimBgYV7JjTlgch_xZ8otxFWfNgZSg?e=pdq28B)
+
 `[Evaluation ground-truth]` [Link](https://1drv.ms/u/s!ApEsJ9RIZdBQem-MG1TjuRWApyA?e=fVPnmT)
 
-*Some files need to be renamed.* Organize them as follows (lexicon files are not listed here):
+*Some image files need to be renamed.* Organize them as follows (lexicon files are not listed here):
 
 ```
 |- ./datasets
@@ -183,9 +193,9 @@ python setup.py build develop
    |  |- rename_lsvtimg_train
    |  └  lsvt_train.json
    |- ReCTS
-   |  |- ReCTS_train_images
-   |  |- ReCTS_val_images
-   |  |- ReCTS_test_images
+   |  |- ReCTS_train_images  # 18,000 images
+   |  |- ReCTS_val_images  # 2,000 images
+   |  |- ReCTS_test_images  # 5,000 images
    |  |- rects_train.json
    |  |- rects_val.json
    |  └  rects_test.json
