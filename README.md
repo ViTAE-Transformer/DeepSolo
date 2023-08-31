@@ -291,7 +291,8 @@ If you find DeepSolo helpful, please consider giving this repo a star:star: and 
 @inproceedings{ye2023deepsolo,
   title={DeepSolo: Let Transformer Decoder with Explicit Points Solo for Text Spotting},
   author={Ye, Maoyuan and Zhang, Jing and Zhao, Shanshan and Liu, Juhua and Liu, Tongliang and Du, Bo and Tao, Dacheng},
-  booktitle={CVPR},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={19348--19357},
   year={2023}
 }
 
