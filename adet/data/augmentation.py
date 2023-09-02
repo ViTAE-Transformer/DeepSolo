@@ -117,14 +117,14 @@ class Pad(Augmentation):
 
     def get_transform(self, img):
         ori_h, ori_w = img.shape[:2]  # h, w
-        if ori_h % 32 == 0:
+        if ori_h % self.divisible_size == 0:
             pad_h = 0
         else:
-            pad_h = 32 - ori_h % 32
-        if ori_w % 32 == 0:
+            pad_h = self.divisible_size - ori_h % self.divisible_size
+        if ori_w % self.divisible_size == 0:
             pad_w = 0
         else:
-            pad_w = 32 - ori_w % 32
+            pad_w = self.divisible_size - ori_w % self.divisible_size
         # pad_h, pad_w = 32 - ori_h % 32, 32 - ori_w % 32
         return PadTransform(
             0, 0, pad_w, pad_h, pad_value=0
