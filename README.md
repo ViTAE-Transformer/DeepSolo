@@ -62,6 +62,7 @@ Other applications of [ViTAE](https://github.com/ViTAE-Transformer/ViTAE-Transfo
 |Backbone|External Data|Det-P|Det-R|Det-H|1-NED|Weights|
 |:------:|:------:|:------:|:------:|:------:|:------:|:------:|
 |Res-50|SynChinese130K+ArT+LSVT|92.6|89.0|90.7|78.3|[OneDrive](https://1drv.ms/u/s!AimBgYV7JjTlgch2WG67htEhTddRnw?e=UpnEaq)|
+|ViTAEv2-S|SynChinese130K+ArT+LSVT|92.6|89.9|91.2|79.6|[OneDrive](https://1drv.ms/u/s!AimBgYV7JjTlgclUYAOof4UpAxo1qw?e=y1VT42)|
 
 ***
 
@@ -89,6 +90,7 @@ Other applications of [ViTAE](https://github.com/ViTAE-Transformer/ViTAE-Transfo
 |Backbone|Training Data|Weights|
 |:------:|:------:|:------:|
 |Res-50|SynChinese130K+ArT+LSVT+ReCTS|[OneDrive](https://1drv.ms/u/s!AimBgYV7JjTlgch1pH08bolhgKEBQQ?e=yeSwwQ)|
+|ViTAEv2-S|SynChinese130K+ArT+LSVT+ReCTS|[OneDrive](https://1drv.ms/u/s!AimBgYV7JjTlgclTt8LRiZd3yh_c9Q?e=qLhBYG)|
 
 ## Usage
 
