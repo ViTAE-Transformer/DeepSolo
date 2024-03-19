@@ -11,7 +11,7 @@ This is the official repo for the papers:
 
 > [**DeepSolo: Let Transformer Decoder with Explicit Points Solo for Text Spotting**](https://arxiv.org/abs/2211.10772)
 > 
-> [**DeepSolo++: Let Transformer Decoder with Explicit Points Solo for Text Spotting**](https://arxiv.org/abs/2305.19957)
+> [**DeepSolo++: Let Transformer Decoder with Explicit Points Solo for Multilingual Text Spotting**](https://arxiv.org/abs/2305.19957)
 
 <img src="./figs/DeepSolo.jpg" alt="image" style="zoom:50%;" />
 
@@ -299,7 +299,7 @@ If you find DeepSolo helpful, please consider giving this repo a star:star: and 
 }
 
 @article{ye2023deepsolo++,
-  title={DeepSolo++: Let Transformer Decoder with Explicit Points Solo for Text Spotting},
+  title={DeepSolo++: Let Transformer Decoder with Explicit Points Solo for Multilingual Text Spotting},
   author={Ye, Maoyuan and Zhang, Jing and Zhao, Shanshan and Liu, Juhua and Liu, Tongliang and Du, Bo and Tao, Dacheng},
   booktitle={arxiv preprint arXiv:2305.19957},
   year={2023}

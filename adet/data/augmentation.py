@@ -49,7 +49,7 @@ def gen_crop_transform_with_instance(crop_size, image_size, instances, crop_box=
         while modified:
             modified, x0, y0, crop_size = adjust_crop(x0, y0, crop_size, instances)
             num_modifications += 1
-            if num_modifications > 25:
+            if num_modifications > 100:
                 raise ValueError(
                     "Cannot finished cropping adjustment within 25 tries (#instances {}).".format(
                         len(instances)
