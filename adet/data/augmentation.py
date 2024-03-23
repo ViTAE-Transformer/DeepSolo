@@ -1,14 +1,12 @@
 import random
-from typing import Tuple
-import sys
-from PIL import Image
 import numpy as np
+
 from fvcore.transforms import transform as T
+from fvcore.transforms.transform import Transform, NoOpTransform
+
 from detectron2.data.transforms import RandomCrop, StandardAugInput
 from detectron2.structures import BoxMode
-import torch
 from detectron2.data.transforms import Augmentation, PadTransform
-from fvcore.transforms.transform import Transform, NoOpTransform
 
 
 def gen_crop_transform_with_instance(crop_size, image_size, instances, crop_box=True):
