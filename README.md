@@ -92,6 +92,28 @@ Other applications of [ViTAE](https://github.com/ViTAE-Transformer/ViTAE-Transfo
 |Res-50|SynChinese130K+ArT+LSVT+ReCTS|[OneDrive](https://1drv.ms/u/s!AimBgYV7JjTlgch1pH08bolhgKEBQQ?e=yeSwwQ)|
 |ViTAEv2-S|SynChinese130K+ArT+LSVT+ReCTS|[OneDrive](https://1drv.ms/u/s!AimBgYV7JjTlgclTt8LRiZd3yh_c9Q?e=qLhBYG)|
 
+***
+
+> for video datasets
+
+Model finetuned on **[BOVText](https://github.com/weijiawu/BOVText-Benchmark)**:
+
+|Backbone|Config|External Data|Weights|
+|:------:|:------:|:------:|:------:|
+|Res-50|`NUM_QUERIES`: 100, `NUM_POINTS`: 25, `VOC_SIZE`: 5462|SynChinese130K+ArT+LSVT+ReCTS|[OneDrive](https://1drv.ms/u/s!AimBgYV7JjTlgcskG1ZT6CA4jkz54g?e=ALadSW)|
+
+Model finetuned on **[DSText ](https://rrc.cvc.uab.es/?ch=22)**:
+
+|Backbone|Config|External Data|Weights|
+|:------:|:------:|:------:|:------:|
+|Res-50|`NUM_QUERIES`: 300, `NUM_POINTS`: 25, `VOC_SIZE`: 37|Synth150K+Total-Text+MLT17+IC13+IC15+TextOCR|[OneDrive](https://1drv.ms/u/s!AimBgYV7JjTlgcsmlIxE_M2822nI_g?e=4Dqyhs)|
+
+**Pre-trained Model for DSText**
+
+|Backbone|Config|Training Data|Weights|
+|:------:|:------:|:------:|:------:|
+|Res-50|`NUM_QUERIES`: 300, `NUM_POINTS`: 25, `VOC_SIZE`: 37|Synth150K+Total-Text+MLT17+IC13+IC15+TextOCR|[OneDrive](https://1drv.ms/u/s!AimBgYV7JjTlgcsoo1OYjqR-YiYq-Q?e=Wao9vV)|
+
 ## Usage
 
 - ### Installation
