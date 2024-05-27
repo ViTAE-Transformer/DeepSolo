@@ -145,21 +145,21 @@ python setup.py build develop
 <details>
 <summary>Datasets</summary>
 
-`[SynthText150K (CurvedSynText150K)]` [images](https://github.com/aim-uofa/AdelaiDet/tree/master/datasets) | [annotations(Part1)](https://1drv.ms/u/s!ApEsJ9RIZdBQgQTfQC578sYbkPik?e=2Yz06g) | [annotations(Part2)](https://1drv.ms/u/s!ApEsJ9RIZdBQgQJWqH404p34Wb1m?e=KImg6N)
+`[SynthText150K (CurvedSynText150K)]` [images](https://github.com/aim-uofa/AdelaiDet/tree/master/datasets) | [annotations(Part1)](https://1drv.ms/u/c/50d06548d4272c91/EZEsJ9RIZdAggFCEAAAAAAABeYUu74eBfEmFB1xOQ-5E9Q?e=Hdxbnn) | [annotations(Part2)](https://1drv.ms/u/c/50d06548d4272c91/EZEsJ9RIZdAggFCCAAAAAAABPLVfhDpdKBVSnrRCzoIbRQ?e=grQPBS)
 
-`[MLT]` [images](https://github.com/aim-uofa/AdelaiDet/tree/master/datasets) | [annotations](https://1drv.ms/u/s!ApEsJ9RIZdBQgQBpvuvV2KBBbN64?e=HVTCab)
+`[MLT]` [images](https://github.com/aim-uofa/AdelaiDet/tree/master/datasets) | [annotations](https://1drv.ms/u/c/50d06548d4272c91/EZEsJ9RIZdAggFCAAAAAAAABVTsP5XQ1Svd7lalT7WzhPQ?e=tC7oRi)
 
-`[ICDAR2013]` [images](https://1drv.ms/u/s!ApEsJ9RIZdBQgQcK05sWzK3_t26T?e=5jTWAa) | [annotations](https://1drv.ms/u/s!ApEsJ9RIZdBQfbgqFCeiKOrTM0E?e=UMfIQh)
+`[ICDAR2013]` [images](https://1drv.ms/u/c/50d06548d4272c91/EZEsJ9RIZdAggFCHAAAAAAABhBhmqibPG-bzsl-uQJ03vw?e=01nJFf) | [annotations](https://1drv.ms/u/c/50d06548d4272c91/EZEsJ9RIZdAggFB9AAAAAAABp8FXNh5tDgyvWgoBaGUOEg?e=jLufgf)
 
-`[ICDAR2015]` [images](https://1drv.ms/u/s!ApEsJ9RIZdBQgQbupfCNqVxtYGna?e=b4TQY2) | [annotations](https://1drv.ms/u/s!ApEsJ9RIZdBQfhGW5JDiNcDxfWQ?e=PZ2JCX)
+`[ICDAR2015]` [images](https://1drv.ms/u/c/50d06548d4272c91/EZEsJ9RIZdAggFCGAAAAAAABmL_1MjsVZqcTjXr7A8qwdQ?e=XPxN0T) | [annotations](https://1drv.ms/u/c/50d06548d4272c91/EZEsJ9RIZdAggFB-AAAAAAABlKEowFAPTyR7Ku2tZFIyzw?e=LjOtWq)
 
-`[Total-Text]` [images](https://1drv.ms/u/s!ApEsJ9RIZdBQgQjyPyivo_FnjJ1H?e=qgSFYL) | [annotations](https://1drv.ms/u/s!ApEsJ9RIZdBQgQOShwd8O0K5Dd1f?e=GYyPAX)
+`[Total-Text]` [images](https://1drv.ms/u/c/50d06548d4272c91/EZEsJ9RIZdAggFCIAAAAAAAB7-BHGSX6uCKdLgisrfSQrw?e=MZeLnd) | [annotations](https://1drv.ms/u/c/50d06548d4272c91/EZEsJ9RIZdAggFCDAAAAAAAB83d4Ws4FrpccLsNJzLJCiQ?e=1sVglr)
 
-`[CTW1500]` [images](https://1drv.ms/u/s!ApEsJ9RIZdBQgQlZVAH5AJld3Y9g?e=zgG71Z) | [annotations](https://1drv.ms/u/s!ApEsJ9RIZdBQfPpyzxoFV34zBg4?e=WK20AN)
+`[CTW1500]` [images](https://1drv.ms/u/c/50d06548d4272c91/EZEsJ9RIZdAggFCJAAAAAAABSo-FjSzgqR04lSqsN63eLg?e=WuQhIO) | [annotations](https://1drv.ms/u/c/50d06548d4272c91/EZEsJ9RIZdAggFB8AAAAAAAB7urL8H3eQAbvxVhHyiF7ZA?e=guR2MH)
 
-`[TextOCR]` [images](https://dl.fbaipublicfiles.com/textvqa/images/train_val_images.zip) | [annotations](https://1drv.ms/u/s!ApEsJ9RIZdBQgQHY3mjH13GRLPGI?e=Dx1O99)
+`[TextOCR]` [images](https://dl.fbaipublicfiles.com/textvqa/images/train_val_images.zip) | [annotations](https://1drv.ms/u/c/50d06548d4272c91/EZEsJ9RIZdAggFCBAAAAAAABKyDtzfS-cgaoxIFSCwd9rQ?e=aK6eOr)
 
-`[Inverse-Text]` [images](https://1drv.ms/u/s!AimBgYV7JjTlgccVhlbD4I3z5QfmsQ?e=myu7Ue) | [annotations](https://1drv.ms/u/s!ApEsJ9RIZdBQf3G4vZpf4QD5NKo?e=xR3GtY)
+`[Inverse-Text]` [images](https://1drv.ms/u/s!AimBgYV7JjTlgccVhlbD4I3z5QfmsQ?e=myu7Ue) | [annotations](https://1drv.ms/u/c/50d06548d4272c91/EZEsJ9RIZdAggFB_AAAAAAABWaXEpUfaxwoHIysNQQhbSg?e=3e3goD)
 
 `[SynChinese130K]` [images](https://github.com/aim-uofa/AdelaiDet/tree/master/datasets) | [annotations](https://1drv.ms/u/s!AimBgYV7JjTlgch5W0n1Iv397i0csw?e=Gq8qww)
 
@@ -169,7 +169,7 @@ python setup.py build develop
 
 `[ReCTS]` [images](https://github.com/aim-uofa/AdelaiDet/tree/master/datasets) | [annotations](https://1drv.ms/u/s!AimBgYV7JjTlgch_xZ8otxFWfNgZSg?e=pdq28B)
 
-`[Evaluation ground-truth]` [Link](https://1drv.ms/u/s!ApEsJ9RIZdBQem-MG1TjuRWApyA?e=fVPnmT)
+`[Evaluation ground-truth]` [Link](https://1drv.ms/u/c/50d06548d4272c91/EZEsJ9RIZdAggFB6AAAAAAABPi2VUFAMwBxLLPnzDJdquQ?e=HXp7Pa)
 
 *Some image files need to be renamed.* Organize them as follows (lexicon files are not listed here):
 
@@ -240,8 +240,7 @@ python setup.py build develop
 
 <details>
 <summary>ImageNet Pre-trained Backbone</summary>
-
-If you want to pre-train DeepSolo with ResNet-101, ViTAEv2-S or SwinTransformer , you can download the converted backbone weights and put them under `pretrained_backbone` for initialization:  [Swin-T](https://1drv.ms/u/s!ApEsJ9RIZdBQgQvFeSphQrQyacmS?e=H7NtDN) | [ViTAEv2-S](https://1drv.ms/u/s!ApEsJ9RIZdBQgQqGMOhxm6SNmXu3?e=8hiqX1) | [Res101](https://1drv.ms/u/s!ApEsJ9RIZdBQgQ3594GtopQMe-lR?e=fPnWeb) | [Swin-S](https://1drv.ms/u/s!ApEsJ9RIZdBQgQzn8w4kPoPvzOtY?e=Hfa4ET). You can also refer to the python files in `pretrained_backbone` and convert the backbones by yourself.
+If you want to pre-train DeepSolo with ResNet-101, ViTAEv2-S or SwinTransformer , you can download the converted backbone weights and put them under `pretrained_backbone` for initialization:  [Swin-T](https://1drv.ms/u/c/50d06548d4272c91/EZEsJ9RIZdAggFCLAAAAAAABmc6ZdRL8R_AkWtTBzEKNSQ?e=jiXXyj) | [ViTAEv2-S](https://1drv.ms/u/c/50d06548d4272c91/EZEsJ9RIZdAggFCKAAAAAAABO8e5eyfOnPO6x_vu0hyVfw?e=9mPfKa) | [Res101](https://1drv.ms/u/c/50d06548d4272c91/EZEsJ9RIZdAggFCNAAAAAAABJ_1E2Ah5k9KhCN2E6QhpWg?e=0bwRaR) | [Swin-S](https://1drv.ms/u/c/50d06548d4272c91/EZEsJ9RIZdAggFCMAAAAAAABB9Nygpar0ccL48t2O2yOQA?e=1IA7LF). You can also refer to the python files in `pretrained_backbone` and convert the backbones by yourself.
 </details>
 
 
@@ -320,7 +319,7 @@ python demo/demo.py --config-file ${CONFIG_FILE} --input ${IMAGES_FOLDER_OR_ONE_
 
 ## Citation
 
-If you find DeepSolo helpful, please consider giving this repo a star:star: and citing:
+If you find DeepSolo helpful, please consider giving this repo a star :star: and citing:
 ```bibtex
 @inproceedings{ye2023deepsolo,
   title={DeepSolo: Let Transformer Decoder with Explicit Points Solo for Text Spotting},
