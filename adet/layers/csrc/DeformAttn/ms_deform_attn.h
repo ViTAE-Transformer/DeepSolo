@@ -10,7 +10,7 @@
 
 #pragma once
 
-#include "ms_deform_attn_cpu.h"
+#include "cpu/ms_deform_attn_cpu.h"
 
 #ifdef WITH_CUDA
 #include "ms_deform_attn_cuda.h"
