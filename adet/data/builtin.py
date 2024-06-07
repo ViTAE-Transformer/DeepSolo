@@ -75,24 +75,24 @@ def register_all_coco(root="datasets", voc_size_cfg=37, num_pts_cfg=25):
             num_pts_cfg
         )
 
-
-# get the vocabulary size and number of point queries in each instance
-# to eliminate blank text and sample gt according to Bezier control points
-parser = default_argument_parser()
-# add the following argument to avoid some errors while running demo/demo.py
-parser.add_argument("--input", nargs="+", help="A list of space separated input images")
-parser.add_argument(
-    "--output",
-    help="A file or directory to save output visualizations. "
-    "If not given, will show output in an OpenCV window.",
-)
-parser.add_argument(
-    "--opts",
-    help="Modify config options using the command-line 'KEY VALUE' pairs",
-    default=[],
-    nargs=argparse.REMAINDER,
+if __name__ == "__main__":
+    # get the vocabulary size and number of point queries in each instance
+    # to eliminate blank text and sample gt according to Bezier control points
+    parser = default_argument_parser()
+    # add the following argument to avoid some errors while running demo/demo.py
+    parser.add_argument("--input", nargs="+", help="A list of space separated input images")
+    parser.add_argument(
+        "--output",
+        help="A file or directory to save output visualizations. "
+        "If not given, will show output in an OpenCV window.",
     )
-args = parser.parse_args()
-cfg = get_cfg()
-cfg.merge_from_file(args.config_file)
-register_all_coco(voc_size_cfg=cfg.MODEL.TRANSFORMER.VOC_SIZE, num_pts_cfg=cfg.MODEL.TRANSFORMER.NUM_POINTS)
+    parser.add_argument(
+        "--opts",
+        help="Modify config options using the command-line 'KEY VALUE' pairs",
+        default=[],
+        nargs=argparse.REMAINDER,
+        )
+    args = parser.parse_args()
+    cfg = get_cfg()
+    cfg.merge_from_file(args.config_file)
+    register_all_coco(voc_size_cfg=cfg.MODEL.TRANSFORMER.VOC_SIZE, num_pts_cfg=cfg.MODEL.TRANSFORMER.NUM_POINTS)
