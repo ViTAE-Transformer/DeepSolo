@@ -1,9 +1,5 @@
 <h1 align="center">DeepSolo++: Let Transformer Decoder with Explicit Points Solo for Multilingual Text Spotting</h1> 
 
-<p align="center">
-  <a href="#Checkpoints">Main Results</a> |
-  <a href="#Usage">Usage</a>
-</p >
 
 
 ## Checkpoints
