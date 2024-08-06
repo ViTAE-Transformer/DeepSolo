@@ -1,0 +1,29 @@
+_BASE_: "../Base_det.yaml"
+
+MODEL:
+  WEIGHTS: "./pretrained_model/res50_pretrain_synth-tt-mlt-13-15-textocr.pth"
+  
+DATASETS:
+  TRAIN: ("mlt19_train","LSVT","ArT","RCTW","Arabic","Bangla","Chinese","Hindi","Japanese","Korean","Latin",)
+  TEST: ("mlt19_test",)
+
+INPUT:
+  MIN_SIZE_TRAIN: (480, 512, 544, 576, 608, 640, 672, 704, 736, 768, 800,)
+  MAX_SIZE_TRAIN: 1400
+
+DATALOADER:
+  NUM_WORKERS: 4
+
+SOLVER:
+  IMS_PER_BATCH: 8
+  BASE_LR: 1e-4
+  LR_BACKBONE: 1e-5
+  WARMUP_ITERS: 0
+  STEPS: (450000,)
+  MAX_ITER: 600000
+  CHECKPOINT_PERIOD: 50000
+
+TEST:
+  EVAL_PERIOD: 100000000
+
+OUTPUT_DIR: "output/R50/bs8_600k_synth-textocr-init/pretrain"

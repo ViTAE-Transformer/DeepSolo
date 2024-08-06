@@ -1,0 +1,32 @@
+_BASE_: "../Base_det.yaml"
+
+MODEL:
+  WEIGHTS: "./output/R50/bs8_600k_synth-textocr-init/pretrain/model_final.pth"
+  
+DATASETS:
+  TRAIN: ("mlt19_train",)
+  TEST: ("mlt19_test",)  # or 'mlt17_test'
+
+INPUT:
+  MIN_SIZE_TRAIN: (800,900,1000,1100,1200,)
+  MAX_SIZE_TRAIN: 2000
+  MIN_SIZE_TEST: 1400
+  MAX_SIZE_TEST: 2000
+  ROTATE: False
+
+DATALOADER:
+  NUM_WORKERS: 4
+
+SOLVER:
+  IMS_PER_BATCH: 8
+  BASE_LR: 1e-5
+  LR_BACKBONE: 1e-6
+  WARMUP_ITERS: 0
+  STEPS: (100000,)
+  MAX_ITER: 50000
+  CHECKPOINT_PERIOD: 25000
+
+TEST:
+  EVAL_PERIOD: 100000000
+
+OUTPUT_DIR: "output/R50/bs8_600k_synth-textocr-init/finetune"
