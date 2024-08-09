@@ -26,7 +26,6 @@ MODEL:
     INFERENCE_TH_TEST: 0.35
     LANGUAGE:
       CLASSES: ["Arabic","Bangla","Chinese","Hindi","Japanese","Korean","Latin","Symbols"]
-      VOC_SIZES: [("Arabic", 72),("Bangla", 109),("Chinese", 5197),("Hindi", 107),("Japanese", 2294),("Korean", 1797),("Latin", 242),("Symbols", 54)]
     LOSS:
       BEZIER_SAMPLE_POINTS: 25
       BEZIER_CLASS_WEIGHT: 1.0
